@@ -1,0 +1,137 @@
+$__rocketColor: white;
+$__rocketBubbleColor: #1b1b1b;
+$__rocketFireColor:  #F2993B;
+$__bgColor: white;
+
+.rocket__container {
+  position: relative;
+  transform: rotate(40deg);
+  width: 20px;
+  height: 40px;
+  margin: 10px auto;
+
+  &.rocket__bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 60px;
+    box-shadow: inset 1px -7px 4px 0.5px white;
+    border-radius: 50%;
+  }
+
+  &.rocket__body {
+    width: 20px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: calc(50% - 5px);
+      border-right: 5px solid transparent;
+      border-bottom: 20px solid white;
+      border-left: 5px solid transparent;
+      background: transparent;
+    }
+
+    &:after {
+      content: '';
+      top: calc(50% - 15px);
+      left: calc(50% - 10px);
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #1b1b1b;
+      box-shadow: inset -1.5px 0px 3.5px 0px white;
+    }
+  }
+
+  &.wings__support {
+    position: absolute;
+    top: 60%;
+    left: -15%;
+    width: 100%;
+    height: 20px;
+    background: white;
+    z-index: 1;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      width: 90%;
+      height: 40%;
+      left: 5%;
+      border-radius: 15px 15px 0px 0;
+      background: #1b1b1b;
+    }
+
+    &.wing__left {
+      position: absolute;
+      top: calc(-100% + 1px);
+      left: 5%;
+      border-left: 10px solid transparent;
+      border-bottom: 20px solid white;
+    }
+
+    &.wing__right {
+      position: absolute;
+      top: calc(-100% + 1px);
+      right: 5%;
+      border-right: 10px solid transparent;
+      border-bottom: 20px solid white;
+    }
+  }
+
+  &.rocket__motor {
+    position: absolute;
+    top: calc(100% - 20px);
+    left: calc(50% - 10px);
+    width: 10px;
+    height: 15px;
+    border-right: 5px solid transparent;
+    border-bottom: 15px solid white;
+    border-left: 5px solid transparent;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 150%;
+      left: calc(50% - 5px);
+      border-top: 30px solid #F2993B;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+      animation: animFire 0.5s infinite;
+    }
+  }
+}
+
+@keyframes animFire {
+  0% {
+    border-top: 25px solid #F2993B;
+  }
+  25% {
+    border-top: 25px solid #F2993B;
+  }
+  50% {
+    border-top: 28px solid #F2993B;
+  }
+  65% {
+    border-top: 22px solid #F2993B;
+  }
+  80% {
+    border-top: 18px solid #F2993B;
+  }
+  100% {
+    border-top: 30px solid #F2993B;
+  }
+}
+
+
+

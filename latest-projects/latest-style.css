@@ -1,0 +1,12 @@
+.section-bg {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  padding: 20px;
+}
+.parent2 {
+  width: 70vw;
+}
+.parent2-body {
+  flex-wrap: wrap;
+}

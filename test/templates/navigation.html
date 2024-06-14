@@ -1,0 +1,11 @@
+<nav>
+    <a href="{{ url_for('home_route') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Home</a>
+    {% if not session.get('username') %}
+      <a href="{{ url_for('register') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Register</a>
+      <a href="{{ url_for('login') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Login</a>
+      <a href="{{ url_for('reset_password') }}" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">Reset Password</a>
+    {% else %}
+      <a href="{{ url_for('account') }}" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Account Settings</a>
+      <a href="{{ url_for('logout') }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Logout</a>
+    {% endif %}
+  </nav>
